@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Volume2 } from 'lucide-react';
+import { Volume2, Home, Twitter, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -23,6 +23,24 @@ const ElizaInterface = () => {
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [isVoiceActive, setIsVoiceActive] = useState(false);
+  const [floatCount, setFloatCount] = useState(0);
+  const [shouldFloat, setShouldFloat] = useState(true);
+
+  // Initial floating animation - 3 times
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFloatCount(prev => {
+        if (prev < 2) {
+          return prev + 1;
+        } else {
+          setShouldFloat(false);
+          return prev;
+        }
+      });
+    }, 6000); // Each float cycle is 6s
+
+    return () => clearTimeout(timer);
+  }, [floatCount]);
 
   const elizaResponses = [
     "That's really interesting. Tell me more about how that makes you feel.",
@@ -61,6 +79,10 @@ const ElizaInterface = () => {
       setIsTyping(false);
       setIsVoiceActive(true);
       
+      // Trigger floating animation when Eliza responds
+      setShouldFloat(true);
+      setFloatCount(0);
+      
       // Stop voice animation after 3 seconds
       setTimeout(() => setIsVoiceActive(false), 3000);
     }, 2000);
@@ -97,14 +119,48 @@ const ElizaInterface = () => {
         }}
       />
 
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4">
+      {/* Header Menu */}
+      <header className="relative z-20 flex justify-between items-center p-4">
+        <div className="flex items-center">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-cyber-gold hover:bg-cyber-orange/20 hover:text-cyber-orange transition-colors"
+          >
+            <Home className="w-6 h-6" />
+          </Button>
+        </div>
+        
+        <div className="flex items-center space-x-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-cyber-gold hover:bg-cyber-orange/20 hover:text-cyber-orange transition-colors"
+            onClick={() => window.open('https://twitter.com', '_blank')}
+          >
+            <Twitter className="w-6 h-6" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-cyber-gold hover:bg-cyber-orange/20 hover:text-cyber-orange transition-colors"
+            onClick={() => window.open('https://t.me', '_blank')}
+          >
+            <Send className="w-6 h-6" />
+          </Button>
+        </div>
+      </header>
+
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4 pt-0">
         {/* Eliza's Avatar Section */}
-        <div className="relative mb-8 animate-float">
+        <div className="relative mb-8">
           <div className="relative">
             <img
               src="/lovable-uploads/fd3cd33d-bebd-4c6f-9987-bcf664a58e0f.png"
               alt="Eliza AI"
-              className="w-80 h-80 object-cover rounded-full cyber-glow animate-pulse-glow"
+              className={`w-80 h-80 object-cover rounded-full cyber-glow animate-pulse-glow ${
+                shouldFloat && floatCount < 3 ? 'animate-float' : ''
+              }`}
             />
             
             {/* Voice indicator */}
