@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Volume2, Home, Twitter, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -26,7 +25,6 @@ const ElizaInterface = () => {
   const [floatCount, setFloatCount] = useState(0);
   const [shouldFloat, setShouldFloat] = useState(true);
 
-  // Initial floating animation - 3 times
   useEffect(() => {
     const timer = setTimeout(() => {
       setFloatCount(prev => {
@@ -96,11 +94,11 @@ const ElizaInterface = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Background with cityscape */}
+      {/* Background with new cityscape */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/lovable-uploads/b5f3a4ac-74ae-4ee5-bb86-c7bafe53a9b0.png')`,
+          backgroundImage: `url('/lovable-uploads/a41fea0b-50f5-45f5-9770-05c6c9f4195b.png')`,
           filter: 'blur(1px) brightness(0.7)'
         }}
       />
@@ -108,11 +106,11 @@ const ElizaInterface = () => {
       {/* Gradient overlay for better contrast */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-dark/30 to-cyber-dark/80" />
       
-      {/* Circuit board pattern overlay */}
+      {/* New neon tech pattern overlay */}
       <div 
         className="absolute inset-0 opacity-20"
         style={{
-          backgroundImage: `url('/lovable-uploads/a6c5eadc-58d6-447d-97f7-dfcf0c90981e.png')`,
+          backgroundImage: `url('/lovable-uploads/3019fed5-08ee-4ce2-8932-f07e0ba5973a.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'hue-rotate(20deg)'
@@ -156,7 +154,7 @@ const ElizaInterface = () => {
         <div className="relative mb-8">
           <div className="relative">
             <img
-              src="/lovable-uploads/fd3cd33d-bebd-4c6f-9987-bcf664a58e0f.png"
+              src="/lovable-uploads/a49b4526-0e67-424c-8698-040761c20953.png"
               alt="Eliza AI"
               className={`w-80 h-80 object-cover rounded-full cyber-glow animate-pulse-glow ${
                 shouldFloat && floatCount < 3 ? 'animate-float' : ''
