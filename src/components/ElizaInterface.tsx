@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Volume2, Home, Twitter, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -113,7 +114,7 @@ const ElizaInterface = () => {
           backgroundImage: `url('/lovable-uploads/3019fed5-08ee-4ce2-8932-f07e0ba5973a.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'hue-rotate(20deg)'
+          filter: 'hue-rotate(280deg)'
         }}
       />
 
@@ -123,7 +124,7 @@ const ElizaInterface = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="text-cyber-gold hover:bg-cyber-orange/20 hover:text-cyber-orange transition-colors"
+            className="text-cyber-gold hover:bg-cyber-pink/20 hover:text-cyber-pink transition-colors"
           >
             <Home className="w-6 h-6" />
           </Button>
@@ -133,7 +134,7 @@ const ElizaInterface = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="text-cyber-gold hover:bg-cyber-orange/20 hover:text-cyber-orange transition-colors"
+            className="text-cyber-gold hover:bg-cyber-pink/20 hover:text-cyber-pink transition-colors"
             onClick={() => window.open('https://twitter.com', '_blank')}
           >
             <Twitter className="w-6 h-6" />
@@ -141,7 +142,7 @@ const ElizaInterface = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="text-cyber-gold hover:bg-cyber-orange/20 hover:text-cyber-orange transition-colors"
+            className="text-cyber-gold hover:bg-cyber-pink/20 hover:text-cyber-pink transition-colors"
             onClick={() => window.open('https://t.me', '_blank')}
           >
             <Send className="w-6 h-6" />
@@ -166,13 +167,13 @@ const ElizaInterface = () => {
               <div className={`relative ${isVoiceActive ? 'animate-voice-pulse' : ''}`}>
                 <Volume2 
                   className={`w-8 h-8 transition-colors duration-300 ${
-                    isVoiceActive ? 'text-cyber-gold' : 'text-cyber-orange'
+                    isVoiceActive ? 'text-cyber-gold' : 'text-cyber-purple'
                   }`}
                 />
                 {isVoiceActive && (
                   <>
-                    <div className="absolute inset-0 rounded-full bg-cyber-gold/30 animate-voice-pulse" />
-                    <div className="absolute inset-0 rounded-full bg-cyber-gold/20 animate-voice-pulse" style={{ animationDelay: '0.3s' }} />
+                    <div className="absolute inset-0 rounded-full bg-cyber-pink/30 animate-voice-pulse" />
+                    <div className="absolute inset-0 rounded-full bg-cyber-pink/20 animate-voice-pulse" style={{ animationDelay: '0.3s' }} />
                   </>
                 )}
               </div>
@@ -192,8 +193,8 @@ const ElizaInterface = () => {
                 <div
                   className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl ${
                     message.isEliza
-                      ? 'bg-cyber-dark/80 border border-cyber-orange/30 text-cyber-gold cyber-text-glow animate-speech-bubble'
-                      : 'bg-cyber-orange/20 border border-cyber-gold/30 text-white'
+                      ? 'bg-cyber-dark/80 border border-cyber-pink/30 text-cyber-pink cyber-text-glow animate-speech-bubble'
+                      : 'bg-cyber-purple/20 border border-cyber-magenta/30 text-white'
                   } cyber-bg-blur backdrop-blur-md`}
                 >
                   <p className="text-sm leading-relaxed">{message.text}</p>
@@ -203,11 +204,11 @@ const ElizaInterface = () => {
             
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-cyber-dark/80 border border-cyber-orange/30 px-4 py-3 rounded-2xl cyber-bg-blur">
+                <div className="bg-cyber-dark/80 border border-cyber-pink/30 px-4 py-3 rounded-2xl cyber-bg-blur">
                   <div className="flex space-x-1">
-                    <div className="w-2 h-2 bg-cyber-orange rounded-full animate-bounce" />
-                    <div className="w-2 h-2 bg-cyber-orange rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
-                    <div className="w-2 h-2 bg-cyber-orange rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+                    <div className="w-2 h-2 bg-cyber-pink rounded-full animate-bounce" />
+                    <div className="w-2 h-2 bg-cyber-pink rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
+                    <div className="w-2 h-2 bg-cyber-pink rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
                   </div>
                 </div>
               </div>
@@ -222,16 +223,16 @@ const ElizaInterface = () => {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Share your thoughts with Eliza..."
-                className="w-full bg-cyber-dark/60 border-cyber-orange/40 text-white placeholder-cyber-orange/60 rounded-2xl px-6 py-4 text-lg cyber-bg-blur backdrop-blur-md focus:border-cyber-gold focus:ring-2 focus:ring-cyber-gold/30 transition-all duration-300"
+                className="w-full bg-cyber-dark/60 border-cyber-pink/40 text-white placeholder-cyber-pink/60 rounded-2xl px-6 py-4 text-lg cyber-bg-blur backdrop-blur-md focus:border-cyber-magenta focus:ring-2 focus:ring-cyber-magenta/30 transition-all duration-300"
                 style={{
-                  boxShadow: '0 0 20px rgba(255, 140, 66, 0.1)'
+                  boxShadow: '0 0 20px rgba(255, 20, 196, 0.1)'
                 }}
               />
             </div>
             <Button
               onClick={handleSendMessage}
               disabled={!inputValue.trim()}
-              className="bg-gradient-to-r from-cyber-orange to-cyber-gold hover:from-cyber-gold hover:to-cyber-amber text-cyber-dark px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 cyber-glow hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-gradient-to-r from-cyber-pink to-cyber-magenta hover:from-cyber-magenta hover:to-cyber-violet text-cyber-dark px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 cyber-glow hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Send
             </Button>
@@ -239,7 +240,7 @@ const ElizaInterface = () => {
         </div>
 
         {/* Subtle UI Elements */}
-        <div className="absolute bottom-4 left-4 text-cyber-orange/60 text-sm">
+        <div className="absolute bottom-4 left-4 text-cyber-pink/60 text-sm">
           <p className="cyber-text-glow">Eliza AI • Always here for you</p>
         </div>
       </div>

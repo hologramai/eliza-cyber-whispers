@@ -64,10 +64,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				cyber: {
-					orange: '#FF8C42',
-					gold: '#FFD700',
-					amber: '#FFBF00',
-					glow: 'rgba(255, 140, 66, 0.6)',
+					pink: '#FF14C4',
+					purple: '#8B5CF6',
+					magenta: '#FF1493',
+					violet: '#9333EA',
+					glow: 'rgba(255, 20, 196, 0.6)',
 					dark: '#1A0F0A'
 				}
 			},
@@ -95,10 +96,10 @@ export default {
 				},
 				'pulse-glow': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px rgba(255, 140, 66, 0.4)'
+						boxShadow: '0 0 20px rgba(255, 20, 196, 0.4)'
 					},
 					'50%': {
-						boxShadow: '0 0 40px rgba(255, 140, 66, 0.8)'
+						boxShadow: '0 0 40px rgba(255, 20, 196, 0.8)'
 					}
 				},
 				'float': {
@@ -111,10 +112,10 @@ export default {
 				},
 				'glow-text': {
 					'0%, 100%': {
-						textShadow: '0 0 10px rgba(255, 140, 66, 0.5)'
+						textShadow: '0 0 10px rgba(255, 20, 196, 0.5)'
 					},
 					'50%': {
-						textShadow: '0 0 20px rgba(255, 140, 66, 1)'
+						textShadow: '0 0 20px rgba(255, 20, 196, 1)'
 					}
 				},
 				'voice-pulse': {

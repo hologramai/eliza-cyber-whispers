@@ -16,24 +16,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 33 100% 63%;
+    --primary: 315 100% 70%;
     --primary-foreground: 26 15 10;
 
-    --secondary: 45 100% 50%;
+    --secondary: 280 100% 60%;
     --secondary-foreground: 26 15 10;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 33 100% 63%;
+    --accent: 315 100% 70%;
     --accent-foreground: 26 15 10;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 45 100% 50%;
+    --border: 280 100% 60%;
     --input: 26 15 10;
-    --ring: 33 100% 63%;
+    --ring: 315 100% 70%;
 
     --radius: 0.75rem;
 
@@ -62,11 +62,11 @@
 
 @layer components {
   .cyber-glow {
-    box-shadow: 0 0 20px rgba(255, 140, 66, 0.3);
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.3);
   }
   
   .cyber-text-glow {
-    text-shadow: 0 0 10px rgba(255, 140, 66, 0.5);
+    text-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
   }
   
   .cyber-bg-blur {
